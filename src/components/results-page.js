@@ -15,7 +15,7 @@ class ResultPage {
     this._searchClient = algoliasearch('', '');
 
     this._search = instantsearch({
-      indexName: 'instant_search',
+      indexName: '',
       searchClient: this._searchClient,
     });
   }
