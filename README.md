@@ -1,6 +1,8 @@
-# algolia-sa-assignment
+# Algolia Solution Architecture Assignment
 
-_This project was generated with [create-instantsearch-app](https://github.com/algolia/create-instantsearch-app) by [Algolia](https://algolia.com)._
+## Brief
+
+Our customer Spencer and Williams want to implement a federated search experience which includes both products and brands in the dropdown. They require guidance on how to do this and provided two data sets as well as their current implementation so we can build a demo showing how this might work. Using algolia.com/docs and the provided base repo, extend this experience to include content in the dropdown for search.
 
 ## Get started
 
