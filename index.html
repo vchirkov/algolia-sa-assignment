@@ -18,35 +18,42 @@
 
 <body>
   <header class="header">
-    <h1 class="header-title">
-      <a href="/">algolia-sa-assignment</a>
-    </h1>
-    <div id="searchbox"></div>
-    <div class="autocomplete">
-      <div class="autocomplete__hits" id="autocomplete-hits">
-
+    <div class="header__container">
+      <div class="header__logo-container">
+        <img class="header__logo" src="src/Assets/logo.svg">
+      </div>
+      <div class="header__searchbox-container">
+        <div class="header__searchbox" id="searchbox"></div>
+          <div class="autocomplete">
+            <div class="autocomplete_container">
+              <div class="autocomplete__hits" id="autocomplete-hits">
+              </div>
+            </div>
+          </div>
       </div>
     </div>
   </header>
 
-  <div class="container">
-    <div class="facet-panel">
-      <div class="facet-panel__container">
-        <h2>Brand</h2>
-        <div class="facet-panel__facet-list" id="brand-facet"></div>
+  <div class="results" style="display:none">
+    <div class="results__container">
+      <div class="facet-panel">
+        <div class="facet-panel__container">
+          <h2>Brand</h2>
+          <div class="facet-panel__facet-list" id="brand-facet"></div>
+        </div>
+        <div class="facet-panel__container">
+          <h2>Categories</h2>
+          <div class="facet-panel__facet-list" id="categories-facet"></div>
+        </div>
       </div>
-      <div class="facet-panel__container">
-        <h2>Categories</h2>
-        <div class="facet-panel__facet-list" id="categories-facet"></div>
+      <div class="search-panel">
+        <div class="search-panel__results">
+          <div id="hits"></div>
+        </div>
       </div>
-    </div>
-    <div class="search-panel">
-      <div class="search-panel__results">
-        <div id="hits"></div>
-      </div>
-    </div>
 
-    <div id="pagination"></div>
+      <div id="pagination"></div>
+    </div>
   </div>
 
   <script src="./src/app.js"></script>
