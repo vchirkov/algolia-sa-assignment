@@ -6,7 +6,7 @@ Our customer Spencer and Williams want to implement a _federated search experien
 
 ## Data Sources
 
-You can find both datasets in the data folder. You will need to push this data to Algolia.
+You can find both datasets in the data folder. You will need to push this data to Algolia in your own application and connect the app to the dataset.
 
 ## Get started
 
