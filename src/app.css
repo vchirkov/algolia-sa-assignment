@@ -65,6 +65,7 @@
 
 /* Autocomplete */
 .autocomplete {
+  display: none;
   background-color: #fff;
   padding: 20px;
   z-index: 99;
@@ -109,19 +110,33 @@
 .results {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 80px 1rem 0;
+  padding: 120px 1rem 0;
 }
 
-.search-panel {
+.results__container {
   display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
 
-.search-panel__filters {
+/* Facets */
+.facet-panel {
   flex: 1;
 }
 
-.search-panel__results {
+/* Hits */
+.search-panel {
   flex: 3;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.search-panel__results li {
+  justify-content: space-between;
+}
+
+.search-panel__results li {
+  width: 30%;
 }
 
 .ais-Highlight-highlighted {

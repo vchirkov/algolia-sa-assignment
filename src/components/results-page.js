@@ -2,6 +2,8 @@ import algoliasearch from 'algoliasearch';
 import instantsearch from 'instantsearch.js';
 import { hits, pagination, refinementList } from 'instantsearch.js/es/widgets';
 
+import resultHit from '../templates/result-hit';
+
 class ResultPage {
   constructor() {
     this._registerClient();
@@ -25,6 +27,9 @@ class ResultPage {
     this._search.addWidgets([
       hits({
         container: '#hits',
+        templates: {
+          item: resultHit,
+        },
       }),
       pagination({
         container: '#pagination',
