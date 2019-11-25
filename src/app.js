@@ -1,5 +1,5 @@
-import ResultsPage from './Components/results-page';
-import Autocomplete from './Components/autocomplete';
+import ResultsPage from './components/results-page';
+import Autocomplete from './components/autocomplete';
 
 class SpencerAndWilliamsSearch {
   constructor() {

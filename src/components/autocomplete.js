@@ -1,6 +1,7 @@
 import algoliasearch from 'algoliasearch';
 import instantsearch from 'instantsearch.js';
 import { hits, searchBox, configure } from 'instantsearch.js/es/widgets';
+import autocompleteProductTemplate from '../templates/autocomplete-product';
 
 class Autocomplete {
   constructor() {
@@ -31,6 +32,7 @@ class Autocomplete {
       }),
       hits({
         container: '#autocomplete-hits',
+        templates: { item: autocompleteProductTemplate },
       }),
     ]);
   }
