@@ -21,18 +21,22 @@
     <h1 class="header-title">
       <a href="/">algolia-sa-assignment</a>
     </h1>
-    <p class="header-subtitle">
-      using
-      <a href="https://github.com/algolia/instantsearch.js">
-        InstantSearch.js
-      </a>
-    </p>
+    <div id="searchbox"></div>
   </header>
 
   <div class="container">
+    <div class="facet-panel">
+      <div class="facet-panel__container">
+        <h2>Brand</h2>
+        <div class="facet-panel__facet-list" id="brand-facet"></div>
+      </div>
+      <div class="facet-panel__container">
+        <h2>Categories</h2>
+        <div class="facet-panel__facet-list" id="categories-facet"></div>
+      </div>
+    </div>
     <div class="search-panel">
       <div class="search-panel__results">
-        <div id="searchbox"></div>
         <div id="hits"></div>
       </div>
     </div>
@@ -40,8 +44,6 @@
     <div id="pagination"></div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/algoliasearch/3.32.0/algoliasearchLite.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.0.0"></script>
   <script src="./src/app.js"></script>
 </body>
 
