@@ -21,10 +21,13 @@ class ResultPage {
    * @return {void}
    */
   _registerClient() {
-    this._searchClient = algoliasearch('', '');
+    this._searchClient = algoliasearch(
+      'VYLEWMPKEZ',
+      '8940a18fde155adf3f74b0912c267aa4'
+    );
 
     this._searchInstance = instantsearch({
-      indexName: '',
+      indexName: 'ecommerce-v2',
       searchClient: this._searchClient,
     });
   }
@@ -62,7 +65,7 @@ class ResultPage {
    * @return {void}
    */
   _startSearch() {
-    this._search.start();
+    this._searchInstance.start();
   }
 }
 
