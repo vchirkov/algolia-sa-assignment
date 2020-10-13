@@ -26,4 +26,4 @@ class SpencerAndWilliamsSearch {
   }
 }
 
-new SpencerAndWilliamsSearch();
+const app = new SpencerAndWilliamsSearch();
