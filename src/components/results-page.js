@@ -22,8 +22,8 @@ class ResultPage {
    */
   _registerClient() {
     this._searchClient = algoliasearch(
-      'VYLEWMPKEZ',
-      '8940a18fde155adf3f74b0912c267aa4'
+      '',
+      ''
     );
 
     this._searchInstance = instantsearch({
