@@ -16,7 +16,7 @@ Once done please host the front end on github pages (or an other tool we can acc
 
 ### Part One - Technical Assignment (3.5 hrs)
 
-Our customer Spencer and Williams want to implement a **_federated search experience_** which includes both products and **_query suggestions_** in the dropdown. They have asked for us to create a demo of this behaviour in their provided codebase.  
+Our customer Spencer and Williams want to implement a **_federated search experience_** which includes both products and **_query suggestions_** in the autocomplete they provided. They have asked for us to create a demo of this behaviour in their provided codebase.  
   
 Spencer and Williams have provided the raw product data and have asked for us to create the suggestions using Algolias query suggestions feature.  
   
