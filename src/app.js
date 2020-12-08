@@ -1,4 +1,3 @@
-import ResultsPage from './components/results-page';
 import Autocomplete from './components/autocomplete';
 
 class SpencerAndWilliamsSearch {
@@ -9,7 +8,6 @@ class SpencerAndWilliamsSearch {
 
   _initSearch() {
     this.autocompleteDropdown = new Autocomplete();
-    this.resultPage = new ResultsPage();
   }
 
   _registerEvents() {
