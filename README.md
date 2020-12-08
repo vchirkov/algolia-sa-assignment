@@ -2,9 +2,10 @@
 
 This is the hiring assignment for the SA Team at Algolia. It’s intended to mimic work you might do here, while giving us an understanding of your skills in:
 
-* Coding
-* User Experience
-* Communication
+* Problem Solving  
+* Coding  
+* User Experience  
+* Communication  
 
 If you want to know how we will judge the assignment, you can view our scoring rubric.  
 
