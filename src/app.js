@@ -7,7 +7,11 @@ class SpencerAndWilliamsSearch {
   }
 
   _initSearch() {
-    this.autocompleteDropdown = new Autocomplete();
+    const applicationId = process.env.ALGOLIA_APP_ID;
+    const apiKey = process.env.ALGOLIA_API_KEY;
+    const indexName = process.env.ALGOLIA_INDEX_NAME;
+
+    this.autocompleteDropdown = new Autocomplete(applicationId, apiKey, indexName);
   }
 
   _registerEvents() {

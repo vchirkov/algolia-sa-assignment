@@ -15,8 +15,8 @@ class Autocomplete {
   /**
    * @constructor
    */
-  constructor() {
-    this._registerClient();
+  constructor(applicationId, apiKey, indexName) {
+    this._registerClient(applicationId, apiKey, indexName);
     this._registerWidgets();
     this._startSearch();
   }
@@ -26,14 +26,11 @@ class Autocomplete {
    * Handles creating the search client and creating an instance of instant search
    * @return {void}
    */
-  _registerClient() {
-    this._searchClient = algoliasearch(
-      '',
-      ''
-    );
+  _registerClient(applicationId, apiKey, indexName) {
+    this._searchClient = algoliasearch(applicationId, apiKey);
 
     this._searchInstance = instantsearch({
-      indexName: 'ecommerce-v2',
+      indexName,
       searchClient: this._searchClient,
     });
   }
