@@ -20,6 +20,8 @@
   },
   "dependencies": {
     "algoliasearch": "^3.35.1",
-    "instantsearch.js": "^4.0.0"
+    "instantsearch.js": "^4.0.0",
+    "jquery": "^3.6.0",
+    "selectize": "^0.12.6"
   }
 }

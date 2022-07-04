@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+body {
+  min-height: 100vh;
+}
+
 /* Instant Search */
 .ais-Hits-list {
   display: flex;
@@ -10,9 +14,10 @@
 
 .ais-Hits-item {
   display: flex;
-  width: 100%;
+  width: 25%;
   box-shadow: none;
   border: 0;
+  margin: 0;
 }
 
 /* Header */
@@ -67,7 +72,7 @@
 .autocomplete {
   display: none;
   background-color: #fff;
-  padding: 20px;
+  padding: 100px 20px 20px;
   z-index: 99;
   margin-top: -32px;
   border-radius: 0 0 2px 2px;
@@ -151,4 +156,26 @@
 #pagination {
   margin: 2rem auto;
   text-align: center;
+}
+
+@media only screen and (max-width: 560px) {
+  .header__logo-container {
+    display: none;
+  }
+
+  .ais-Hits-item {
+    width: 100%;
+  }
+
+  .autocomplete-product {
+    flex-direction: column;
+  }
+
+  .autocomplete-product__image-container {
+    width: 100%;
+  }
+
+  .ais-Hits-list {
+    margin: 0;
+  }
 }

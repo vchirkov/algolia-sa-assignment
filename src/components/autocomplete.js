@@ -1,8 +1,7 @@
-import algoliasearch from 'algoliasearch';
 import instantsearch from 'instantsearch.js';
 
 // Instant Search Widgets
-import { hits, searchBox, configure } from 'instantsearch.js/es/widgets';
+import { hits, configure } from 'instantsearch.js/es/widgets';
 
 // Autocomplete Template
 import autocompleteProductTemplate from '../templates/autocomplete-product';
@@ -14,24 +13,61 @@ import autocompleteProductTemplate from '../templates/autocomplete-product';
 class Autocomplete {
   /**
    * @constructor
+   *
+   * @param {Object} searchClient - Algolia search client
+   * @param {String} indexName - Algolia index name
    */
-  constructor(applicationId, apiKey, indexName) {
-    this._registerClient(applicationId, apiKey, indexName);
+  constructor(searchClient, indexName) {
+    this._registerClient(searchClient, indexName);
     this._registerWidgets();
     this._startSearch();
   }
 
   /**
+   * @public
+   * used to show the autocomplete products results
+   * @return {void}
+   */
+  show() {
+    const autocomplete = document.querySelector('.autocomplete');
+    if (!autocomplete) return;
+    autocomplete.style.display = 'block';
+  }
+
+  /**
+   * @public
+   * used to hide the autocomplete products results
+   * @return {void}
+   */
+  hide() {
+    const autocomplete = document.querySelector('.autocomplete');
+    if (!autocomplete) return;
+    autocomplete.style.display = 'none';
+  }
+
+  /**
+   * @public
+   * used to trigger product search
+   * @param {String} query - the query to search for
+   * @return {void}
+   */
+  search(query) {
+    this._searchInstance.helper.setQuery(query);
+    this._searchInstance.helper.search();
+  }
+
+  /**
    * @private
+   * @param {Object} searchClient - Algolia search client
+   * @param {String} indexName - Algolia index name
+   *
    * Handles creating the search client and creating an instance of instant search
    * @return {void}
    */
-  _registerClient(applicationId, apiKey, indexName) {
-    this._searchClient = algoliasearch(applicationId, apiKey);
-
+  _registerClient(searchClient, indexName) {
     this._searchInstance = instantsearch({
+      searchClient,
       indexName,
-      searchClient: this._searchClient,
     });
   }
 
@@ -43,10 +79,7 @@ class Autocomplete {
   _registerWidgets() {
     this._searchInstance.addWidgets([
       configure({
-        hitsPerPage: 3,
-      }),
-      searchBox({
-        container: '#searchbox',
+        hitsPerPage: 12,
       }),
       hits({
         container: '#autocomplete-hits',

@@ -1,5 +1,4 @@
-const autocompleteProduct = hit => (
-  `<div class="autocomplete-product">
+const autocompleteProduct = hit => `<div class="autocomplete-product">
   <div class="autocomplete-product__image-container">
     <img class="autocomplete-product__image" src="${hit.image}" />
   </div>
@@ -9,7 +8,6 @@ const autocompleteProduct = hit => (
     </h3>
     <p class="autocomplete-product__price">$${hit.price}</p>
   </div>
-</div>`
-);
+</div>`;
 
 export default autocompleteProduct;

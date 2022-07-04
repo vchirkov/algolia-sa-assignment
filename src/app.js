@@ -1,31 +1,32 @@
 import Autocomplete from './components/autocomplete';
+import Suggests from './components/suggests';
+import algoliasearch from 'algoliasearch';
+
+const applicationId = process.env.ALGOLIA_APP_ID;
+const apiKey = process.env.ALGOLIA_API_KEY;
+const resultsIndexName = process.env.ALGOLIA_RESULTS_INDEX_NAME;
+const suggestsIndexName = process.env.ALGOLIA_SUGGESTS_INDEX_NAME;
 
 class SpencerAndWilliamsSearch {
   constructor() {
-    this._initSearch();
+    this._searchClient = algoliasearch(applicationId, apiKey);
+    this.autocomplete = new Autocomplete(this._searchClient, resultsIndexName);
+    this.suggests = new Suggests(this._searchClient, suggestsIndexName, {
+      onChange: query => this.autocomplete.search(query),
+      onFocus: () => this.autocomplete.show(),
+    });
     this._registerEvents();
   }
 
-  _initSearch() {
-    const applicationId = process.env.ALGOLIA_APP_ID;
-    const apiKey = process.env.ALGOLIA_API_KEY;
-    const indexName = process.env.ALGOLIA_INDEX_NAME;
-
-    this.autocompleteDropdown = new Autocomplete(applicationId, apiKey, indexName);
-  }
-
   _registerEvents() {
-    const autocomplete = document.querySelector('.autocomplete');
-    const searchbox = document.querySelector('#searchbox input');
-
-    searchbox.addEventListener('click', () => {
-      autocomplete.style.display = 'block';
-    });
-
-    searchbox.addEventListener('blur', () => {
-      autocomplete.style.display = 'none';
+    // hide autocomplete, when clicked outside of searchbox
+    const searchbox = document.querySelector('.header__searchbox-container');
+    document.body.addEventListener('click', e => {
+      if (searchbox.contains(e.target)) return;
+      this.autocomplete.hide();
     });
   }
 }
 
+// eslint-disable-next-line no-unused-vars
 const app = new SpencerAndWilliamsSearch();
