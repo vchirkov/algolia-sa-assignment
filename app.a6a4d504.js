@@ -32872,6 +32872,7 @@ var Autocomplete = /*#__PURE__*/function () {
     /**
      * @public
      * used to trigger product search
+     * @param {String} query - the query to search for
      * @return {void}
      */
 
@@ -32884,6 +32885,9 @@ var Autocomplete = /*#__PURE__*/function () {
     }
     /**
      * @private
+     * @param {Object} searchClient - Algolia search client
+     * @param {String} indexName - Algolia index name
+     *
      * Handles creating the search client and creating an instance of instant search
      * @return {void}
      */
@@ -32906,7 +32910,7 @@ var Autocomplete = /*#__PURE__*/function () {
     key: "_registerWidgets",
     value: function _registerWidgets() {
       this._searchInstance.addWidgets([(0, _widgets.configure)({
-        hitsPerPage: 12
+        hitsPerPage: 6
       }), (0, _widgets.hits)({
         container: '#autocomplete-hits',
         templates: {
@@ -49221,6 +49225,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
  */
 var Suggests = /*#__PURE__*/function () {
   /**
+   * @param {Object} searchClient - Algolia search client
+   * @param {String} indexName - Algolia index name
+   * @param {Object} opts - options for the suggestion widget
+   *
    * @constructor
    */
   function Suggests(searchClient, indexName) {
@@ -49237,6 +49245,8 @@ var Suggests = /*#__PURE__*/function () {
   /**
    * @private
    * Handles creating of an instance of instant search
+   * @param {Object} searchClient - Algolia search client
+   * @param {String} indexName - Algolia index name
    * @return {void}
    */
 
@@ -49252,6 +49262,7 @@ var Suggests = /*#__PURE__*/function () {
     /**
      * @private
      * Adds widgets to the Algolia instant search instance
+     * @param {Object} opts - options for the suggestion widget
      * @return {void}
      */
 
@@ -56276,7 +56287,8 @@ var SpencerAndWilliamsSearch = /*#__PURE__*/function () {
   }]);
 
   return SpencerAndWilliamsSearch;
-}();
+}(); // eslint-disable-next-line no-unused-vars
+
 
 var app = new SpencerAndWilliamsSearch();
 },{"./components/autocomplete":"src/components/autocomplete.js","./components/suggests":"src/components/suggests.js","algoliasearch":"node_modules/algoliasearch/src/browser/builds/algoliasearch.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -56307,7 +56319,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54668" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53206" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
