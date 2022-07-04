@@ -79,7 +79,7 @@ class Autocomplete {
   _registerWidgets() {
     this._searchInstance.addWidgets([
       configure({
-        hitsPerPage: 12,
+        hitsPerPage: 6,
       }),
       hits({
         container: '#autocomplete-hits',
